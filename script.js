@@ -73,18 +73,13 @@ const num = 100;
 const divisors = [];
 let positive = [];
 
-function getEvenDivisors(num) {
     for (let i = 1; i <= num; i++) {
         if (num % i === 0) {
                 divisors.push(i);
                 positive = divisors.filter(elem => elem % 2 === 0);
         }
     }
-    return positive;
-}
-
-getEvenDivisors(num);
-
+ 
 console.log('Все делители' + ': ' + divisors); // 9
 console.log('Все парные делители' + ': ' + positive);
 console.log('Количество парных делителей' + ': ' + positive.length); // 10
