@@ -69,30 +69,25 @@
 
 // // 9
 
-let num = 100;
-let arr = [];
+const num = 100;
+const divisors = [];
 let positive = [];
 
-for (let i = 1; i <= num; i++) {
-    if (num % i === 0) {
-        arr.push(i);
-    } 
-}
-
-if (num % 2 === 0) {
-        positive.push(2);
-        num = Math.round(num / 2);
-        let numTwo = num / 1;
-        for (let k = 2; k <= numTwo; k++) {
-            if (num % k === 0) {
-                positive.push(2 * k);
-            }
+function getEvenDivisors(num) {
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+                divisors.push(i);
+                positive = divisors.filter(elem => elem % 2 === 0);
         }
     }
+    return positive;
+}
 
-console.log('Все делители' + ': ' + arr); // 9
+getEvenDivisors(num);
+
+console.log('Все делители' + ': ' + divisors); // 9
 console.log('Все парные делители' + ': ' + positive);
-console.log('Количество парных делителей' + ': ' + positive.length);  // 10
+console.log('Количество парных делителей' + ': ' + positive.length); // 10
 console.log('Сумма парных делителей' + ': ' + positive.map(i => x += i, x = 0).reverse()[0]); // 11
 
 
