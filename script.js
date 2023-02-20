@@ -73,17 +73,17 @@ const num = 100;
 const divisors = [];
 let positive = [];
 
-    for (let i = 1; i <= num; i++) {
-        if (num % i === 0) {
-                divisors.push(i);
-                positive = divisors.filter(elem => elem % 2 === 0);
-        }
+for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+        divisors.push(i);
+        positive = divisors.filter((e) => e % 2 === 0);
     }
- 
+}
+
 console.log('Все делители' + ': ' + divisors); // 9
 console.log('Все парные делители' + ': ' + positive);
 console.log('Количество парных делителей' + ': ' + positive.length); // 10
-console.log('Сумма парных делителей' + ': ' + positive.map(i => x += i, x = 0).reverse()[0]); // 11
+console.log('Сумма парных делителей' + ': ' + positive.reduce((a, b) => a + b)); // 11
 
 
 // // // 12
